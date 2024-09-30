@@ -36,4 +36,8 @@ describe('StringCalculatorService', () => {
   it('should handle newlines between numbers', () => {
     expect(service.add('1\n2,3')).toBe(6);
   });
+
+  it('should support different delimiters', () => {
+    expect(service.add('//;\\n1;2')).toBe(3); // \n is replaced by \\n as \n is not recognised in angular/javascript. 
+  });
 });
