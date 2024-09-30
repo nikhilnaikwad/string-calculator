@@ -40,4 +40,9 @@ describe('StringCalculatorService', () => {
   it('should support different delimiters', () => {
     expect(service.add('//;\\n1;2')).toBe(3); // \n is replaced by \\n as \n is not recognised in angular/javascript. 
   });
+
+  it('should throw an exception when a negative number is provided', () => {
+    expect(() => service.add('1,-2,3')).toThrow(new Error('Negatives not allowed: -2'));
+  });
+  
 });

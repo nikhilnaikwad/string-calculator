@@ -23,6 +23,12 @@ export class StringCalculatorService {
     numbers = numbers.replace('n','');
 
     let numberArray = numbers.split(delimiters).map(num => parseInt(num));
+
+    let negatives = numberArray.filter(num => num < 0);
+    if (negatives.length > 0) {
+      throw new Error(`Negatives not allowed: ${negatives.join(',')}`);
+    }
+
     return numberArray.reduce((sum, num) => sum + num, 0);
   }
 
