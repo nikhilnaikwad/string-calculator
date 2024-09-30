@@ -11,5 +11,9 @@ export class StringCalculatorService {
     if (!numbers) {
       return 0;
     }
+
+    if (!isNaN(Number(numbers))) {
+      return parseInt(numbers);
+    }
   }
 }
