@@ -13,6 +13,6 @@ export class StringCalculatorService {
     }
 
     let numberArray = numbers.split(',').map(num => parseInt(num));
-    console.log(numberArray);
+    return numberArray.reduce((sum, num) => sum + num, 0);
   }
 }

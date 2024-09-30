@@ -27,4 +27,9 @@ describe('StringCalculatorService', () => {
     expect(service.add('1,2')).toBe(3);
     expect(service.add('10,20')).toBe(30);
   });
+
+  it('should handle an unknown amount of numbers', () => {
+    expect(service.add('1,2,3,4')).toBe(10);
+    expect(service.add('10,20,30')).toBe(60);
+  });
 });
