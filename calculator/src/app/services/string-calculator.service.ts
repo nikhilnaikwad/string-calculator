@@ -12,8 +12,7 @@ export class StringCalculatorService {
       return 0;
     }
 
-    if (!isNaN(Number(numbers))) {
-      return parseInt(numbers);
-    }
+    let numberArray = numbers.split(',').map(num => parseInt(num));
+    console.log(numberArray);
   }
 }
