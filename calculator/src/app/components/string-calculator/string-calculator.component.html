@@ -1,0 +1,13 @@
+<div>
+    <label for="enter numbers">Enter numbers</label>
+    <input id="input" type="text" [(ngModel)]="input" name="input">
+  </div>
+  <button type="submit" (click)="calculate()">Calculate</button>
+
+  <div *ngIf="!error">
+    <h3>Result: {{ result }}</h3>
+  </div>
+
+  <div *ngIf="error">
+    <h3>Error:</h3> {{ error }}
+  </div>
