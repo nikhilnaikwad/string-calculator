@@ -32,4 +32,8 @@ describe('StringCalculatorService', () => {
     expect(service.add('1,2,3,4')).toBe(10);
     expect(service.add('10,20,30')).toBe(60);
   });
+
+  it('should handle newlines between numbers', () => {
+    expect(service.add('1\n2,3')).toBe(6);
+  });
 });
